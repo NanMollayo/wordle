@@ -1,0 +1,46 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.keyboard_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.keyboard_row div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px 0 5px;
+  background-color: grey;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.keyboard_row .enter {
+  width: 80px;
+}
+
+.keyboard_row .back {
+  width: 80px;
+  font-size: 0;
+}
+
+.keyboard_row .back img {
+  width: 40px;
+}
+
+.keyboard_row div:hover {
+  background-color: beige;
+  cursor: pointer;
+}

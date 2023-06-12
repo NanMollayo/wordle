@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.head_left img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.head_mid {
+  font-size: 40px;
+  font-weight: bolder;
+  margin-left: 95px;
+}
+
+.head_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.head_right img {
+  width: 40px;
+  cursor: pointer;
+  margin-left: 5px;
+}
