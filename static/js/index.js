@@ -18,6 +18,11 @@ let answer_array = [
   "LUCKY",
   "TABLE",
   "KOREA",
+  "DOKDO",
+  "STEAM",
+  "MAKER",
+  "INDEX",
+  "MOUSE",
 ];
 let answer = "SUPER";
 let anstate = 0; //정답인 글자 수, 5이면 정답
@@ -28,7 +33,7 @@ function appstart() {
     const num = Math.floor(Math.random() * answer_array.length);
     //console.log(num);
     answer = answer_array[num];
-    console.log(answer);
+    //console.log(answer);
   }
   function asking() {
     const inf = document.querySelector(".info");
