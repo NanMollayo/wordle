@@ -45,3 +45,11 @@ footer {
   background-color: beige;
   cursor: pointer;
 }
+
+.info {
+  opacity: 0;
+  position: absolute;
+  background-color: beige;
+  width: 90vw;
+  justify-content: center;
+}

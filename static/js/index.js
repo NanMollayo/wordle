@@ -5,6 +5,15 @@ let anstate = 0; //정답인 글자 수, 5이면 정답
 let 인터벌; //타이머 돌리는 함수
 
 function appstart() {
+  function asking() {
+    const inf = document.querySelector(".info");
+    inf.style = "opacity : 1;";
+  }
+  function asking_end() {
+    const inf2 = document.querySelector(".info");
+    inf2.style = "opacity : 0;";
+  }
+
   function displayend() {
     console.log("종료");
     const clock_end = document.querySelector(".timer");
@@ -99,30 +108,33 @@ function appstart() {
   }
 
   function keyclick(event) {
-    //console.log(event.target.innerText);
+    console.log(event.target.innerText);
     if (event.target.innerText.length === 1) {
       const keyObject = { keyCode: 65 };
       keyObject.key = event.target.innerText;
-      //console.log(keyObject);
       keyboarddown(keyObject);
     } else if (event.target.innerText === "ENTER") {
       //엔터
       const keyObject = { keyCode: 1 };
       keyObject.key = event.target.innerText;
-      //console.log(keyObject);
       keyboarddown(keyObject);
     } else if (event.target.alt === "Backspace") {
       //백스페이스(이미지를 누르는 경우)
       const keyObject = { keyCode: 8 };
       keyObject.key = event.target.alt;
-      //console.log("백키");
       keyboarddown(keyObject);
     } else if (event.target.innerText === "Backspace") {
       //백스페이스2(이미지 옆을 누르는경우)
       const keyObject = { keyCode: 8 };
       keyObject.key = event.target.innerText;
-      //console.log(keyObject);
+
       keyboarddown(keyObject);
+    } else if (event.target.alt === "ask") {
+      //질문버튼을 누르는 경우
+      asking();
+    } else if (event.target.innerText.length > 10) {
+      //빈 화면을 누르는 경우
+      asking_end();
     } else return;
   }
 
