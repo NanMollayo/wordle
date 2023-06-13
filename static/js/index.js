@@ -1,6 +1,6 @@
 let index = 0;
 let attempt = 0;
-//const answer = "SUPER";
+const answer = "SUPER";
 let anstate = 0; //정답인 글자 수, 5이면 정답
 let 인터벌; //타이머 돌리는 함수
 
@@ -46,11 +46,11 @@ function appstart() {
 
   async function enterkey() {
     //서버에 정답을 요청하고 기다리는 구문
-    const 응답 = await fetch("/answer"); //await를 이용해서 정답을 받기 전에 실행되는 것을 방지
-    const answer = await 응답.json();
+    //const 응답 = await fetch("/answer"); //await를 이용해서 정답을 받기 전에 실행되는 것을 방지
+    //const answer = await 응답.json();
 
-    console.log(응답);
-    console.log(answer);
+    //console.log(응답);
+    //console.log(answer);
 
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
