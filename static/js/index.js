@@ -33,7 +33,7 @@ function appstart() {
     const num = Math.floor(Math.random() * answer_array.length);
     //console.log(num);
     answer = answer_array[num];
-    console.log(answer);
+    //console.log(answer);
   }
   function asking() {
     const inf = document.querySelector(".info");
