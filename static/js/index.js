@@ -33,7 +33,7 @@ function appstart() {
     const num = Math.floor(Math.random() * answer_array.length);
     //console.log(num);
     answer = answer_array[num];
-    //console.log(answer);
+    console.log(answer);
   }
   function asking() {
     const inf = document.querySelector(".info");
@@ -65,7 +65,8 @@ function appstart() {
   }
 
   function gamend() {
-    window.removeEventListener("keydown", keyboarddown); //기회 소진하여 게임종료
+    window.removeEventListener("keydown", keyboarddown);
+    window.removeEventListener("click", keyclick);
     displayend();
     clearInterval(인터벌);
   }
@@ -76,7 +77,7 @@ function appstart() {
       index = 0;
       anstate = 0;
     } else {
-      gamend();
+      gamend(); //기회 소진으로 게임끝
     }
   }
 
