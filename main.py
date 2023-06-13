@@ -7,6 +7,16 @@ app = FastAPI()
 answer = "TRAIN"
 
 
+class ans(BaseModel):
+    content: str
+
+
+@app.post("/answer")
+def change(item: ans):
+    answer = item.content
+    return answer
+
+
 @app.get("/answer")
 def get_answer():
     return answer
