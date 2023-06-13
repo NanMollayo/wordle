@@ -1,10 +1,34 @@
 let index = 0;
 let attempt = 0;
-const answer = "SUPER";
+let answer_array = [
+  "APPLE",
+  "TRAIN",
+  "SUPER",
+  "HAPPY",
+  "COAST",
+  "GLORY",
+  "FLOOR",
+  "QUERY",
+  "BRAVO",
+  "BRAKE",
+  "BRAWL",
+  "ALICE",
+  "MARCH",
+  "SEVEN",
+  "LUCKY",
+  "TABLE",
+];
+let answer = "SUPER";
 let anstate = 0; //정답인 글자 수, 5이면 정답
 let 인터벌; //타이머 돌리는 함수
 
 function appstart() {
+  function set_ans() {
+    const num = Math.floor(Math.random() * answer_array.length);
+    //console.log(num);
+    answer = answer_array[num];
+    //console.log(answer);
+  }
   function asking() {
     const inf = document.querySelector(".info");
     inf.style = "opacity : 1;";
@@ -152,6 +176,7 @@ function appstart() {
     인터벌 = setInterval(시간, 1000); //클리어를 위해서 함수로 지정
   }
   startTimer(); //타이머 함수 호출
+  set_ans();
   window.addEventListener("keydown", keyboarddown); //키보드 클릭시 키보드다운 함수 호출
 
   window.addEventListener("click", keyclick);
