@@ -1,6 +1,6 @@
 let index = 0;
 let attempt = 0;
-const answer = "SUPER";
+//const answer = "SUPER";
 let anstate = 0; //정답인 글자 수, 5이면 정답
 let 인터벌; //타이머 돌리는 함수
 
@@ -41,7 +41,13 @@ function appstart() {
     index = index - 1;
   }
 
-  function enterkey() {
+  async function enterkey() {
+    const 응답 = await fetch("/answer");
+    const 정답_객체 = await 응답.json();
+    const answer = 정답_객체.answer;
+    console.log(응답);
+    console.log(정답_객체);
+
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
         `.board_block[data-block='${attempt}${i}']`
