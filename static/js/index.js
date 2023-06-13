@@ -7,11 +7,14 @@ let 인터벌; //타이머 돌리는 함수
 function appstart() {
   function displayend() {
     console.log("종료");
-    const div = document.createElement("div");
-    div.innerText = "게임종료";
-    div.style =
-      "font-weight: bolder; font-size: 20px; width:100vw; background-color:white; top:23vh; left:0vw; display:flex; justify-content:center; align-items:center; position:absolute;";
-    document.body.appendChild(div);
+    const clock_end = document.querySelector(".timer");
+    const endtime = clock_end.innerText;
+    clock_end.innerText = `정답! 소요시간  ${clock_end.innerText}`;
+    //const div = document.createElement("div");
+    //div.innerText = "게임종료";
+    //div.style =
+    //  "font-weight: bolder; font-size: 20px; width:100vw; background-color:white; top:23vh; left:0vw; display:flex; justify-content:center; align-items:center; position:absolute;";
+    //document.body.appendChild(div);
   }
 
   function gamend() {
@@ -42,11 +45,12 @@ function appstart() {
   }
 
   async function enterkey() {
-    const 응답 = await fetch("/answer");
-    const 정답_객체 = await 응답.json();
-    const answer = 정답_객체.answer;
+    //서버에 정답을 요청하고 기다리는 구문
+    const 응답 = await fetch("/answer"); //await를 이용해서 정답을 받기 전에 실행되는 것을 방지
+    const answer = await 응답.json();
+
     console.log(응답);
-    console.log(정답_객체);
+    console.log(answer);
 
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
