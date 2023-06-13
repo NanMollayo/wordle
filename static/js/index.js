@@ -17,6 +17,7 @@ let answer_array = [
   "SEVEN",
   "LUCKY",
   "TABLE",
+  "KOREA",
 ];
 let answer = "SUPER";
 let anstate = 0; //정답인 글자 수, 5이면 정답
@@ -27,7 +28,7 @@ function appstart() {
     const num = Math.floor(Math.random() * answer_array.length);
     //console.log(num);
     answer = answer_array[num];
-    //console.log(answer);
+    console.log(answer);
   }
   function asking() {
     const inf = document.querySelector(".info");
@@ -42,7 +43,15 @@ function appstart() {
     console.log("종료");
     const clock_end = document.querySelector(".timer");
     const endtime = clock_end.innerText;
-    clock_end.innerText = `정답! 소요시간  ${clock_end.innerText}`;
+    if (anstate === 5) {
+      //정답인 경우
+      clock_end.innerText = `정답! 소요시간  ${endtime}`;
+    } else {
+      //오답인 경우
+      clock_end.innerText = `오답! 정답은  ${answer}`;
+    }
+
+    //아래는 실험적 코드
     //const div = document.createElement("div");
     //div.innerText = "게임종료";
     //div.style =
@@ -54,7 +63,6 @@ function appstart() {
     window.removeEventListener("keydown", keyboarddown); //기회 소진하여 게임종료
     displayend();
     clearInterval(인터벌);
-    return;
   }
 
   function next() {
